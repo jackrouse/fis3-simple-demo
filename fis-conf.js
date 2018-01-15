@@ -68,11 +68,12 @@ fis
       })
     ]
   })
-
+  //css 压缩
   .match('**.scss', {
     optimizer: fis.plugin('clean-css'),
     // useSprite:true
   })
+  //js 压缩
   // .match('**.js', {
   //   optimizer: fis.plugin('uglify-js')
   // })

@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev": "fis3 server stop && fis3 server clean && fis3 server start -p 1234 && fis3 release --verbose -wLc",
-    "build": "fis3 release prod"
+    "prod": "fis3 release prod"
   },
   "author": "yuanwen",
   "license": "MIT"
