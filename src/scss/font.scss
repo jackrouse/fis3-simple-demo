@@ -1,0 +1,14 @@
+
+
+@font-face {
+  font-family: 'fontNameRegular';
+  src: url('/src/fonts/DIN-Medium.eot');
+  src: local('fontName Regular'), local('fontName'),
+    url('/src/fonts/DIN-Medium2.woff') format('woff'),
+    url('/src/fonts/DIN-Medium.ttf') format('truetype'),
+    url('/src/fonts/DIN-Regular.otf') format('otf');
+}
+
+.numFont{
+  font-family: fontNameRegular;
+}

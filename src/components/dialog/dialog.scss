@@ -1,0 +1,880 @@
+// // @import url('/components/common/mixins.less');
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+@import url('mymsginfo.scss');
+// /*
+//  *看房团活动报名
+//  *zhangchang 20160714
+//  */
+
+
+.dialog-warp {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  z-index: 9999;
+  text-align: center;
+  .dialog-body {
+    // position: fixed;
+    // margin: -20px auto 0;
+    margin: 0 auto;
+    // max-width: 400px;
+    display: table;
+    line-height: 30px;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: #fff;
+    .info-ico {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      // background:url(../images/dialog-ico/dialog_ico.png);
+      vertical-align: middle;
+      &.ico-success {
+        background: url('/src/images/dialogico/dialog-success.png?__sprite');
+        // background-position: 28px 0;
+      }
+      &.ico-info {
+        background: url('/src/images/dialogico/dialog-info.png?__sprite');
+        // background-position: 56px 0;
+      }
+      &.ico-error {
+        background: url('/src/images/dialogico/dialog-error.png?__sprite');
+        // background-position: 0 0;
+      }
+    }
+    .info-msg {
+      display: inline-block;
+      margin: 0 0 0 5px;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+  }
+}
+.confirm-warp {
+  // position: fixed;
+  width: 100%;
+  height: 100%;
+
+  .confirm-mask {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    background: black;
+  }
+  .confirm-body {
+    position: fixed;
+    margin: 0 auto;
+    width: 220px;
+    top: 38%;
+    left: 50%;
+    margin-left: -110px;
+    line-height: 30px;
+    // padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    z-index: 100000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 256px rgba(255, 255, 255, 0.3);
+    .confirm-head {
+      padding: 5px 10px;
+      border-bottom: 1px solid #e5e5e5;
+      .confirm-headtx {
+        color: #333;
+        font-weight: bold;
+      }
+      i.confirm-cancel {
+        float: right;
+        padding: 0 4px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+        cursor: pointer;
+        font-style: normal;
+        &:hover {
+          text-decoration: none;
+          opacity: 0.5;
+          filter: alpha(opacity=50);
+        }
+      }
+    }
+    .confirm-content {
+      padding: 8px 10px;
+      line-height: 22px;
+      text-indent: 20px;
+      font-size: 16px;
+      font-family: Helvetica, arial, sans-serif;
+    }
+    .confirm-footer {
+      text-align: center;
+      margin-bottom: 10px;
+      .confirm-btn {
+        // border-radius: 4px;
+        line-height: 25px;
+        padding: 2px 12px;
+        color: #333;
+        outline: none;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        &.confirm-ok {
+          border: 1px solid #07c;
+          background-color: #07c;
+          color: #fff;
+        }
+        &.confirm-cancel {
+          margin-left: 20px;
+          &:hover {
+            background-color: #ddd;
+          }
+        }
+      }
+    }
+  }
+}
+.loading-warp {
+  // background: url(../images/dialog-ico/lod.gif);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  background-color: #ccc;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  .loading-content {
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    background: url(/src/images/dialogico/dialog-loading.gif) no-repeat;
+  }
+}
+// //报名弹出层
+.dialogbox {
+  position:fixed !important; /* 浮动对话框 */
+  left:50%;
+  top:50%;
+  width:530px;
+  min-height:323px;
+  padding-bottom:20px;
+  margin:-180px 0 0 -265px;
+  background-color:#ffffff;
+  transform:scale(0);
+  transition:transform .3s ease;
+  &.open{
+    transform:scale(1);
+  }
+  // border:1px solid @color-f;
+  // .shadow(0, 2, 5, rgba(0, 0, 0, .1));
+  // .font(16);
+  font-size: 16px;
+  z-index:1000;
+  // overflow:hidden;
+  // display:none;
+  .dialog-title {
+    height:48px;
+    line-height:48px;
+    font-size: 22px;
+    color:$color-f;
+    text-align: left;
+    text-indent:20px;
+    border-bottom: 2px solid $color-f;
+    .summary{
+      font-size:12px;
+      margin-left:20px;
+    }
+  }
+  .close{
+    position: absolute;
+    top:-16px;
+    right:-16px;
+    width: 33px;
+    height: 33px;
+    background: url("img/dialogclose.png?__sprite");
+    cursor: pointer;
+    &:hover{
+      // background: url("img/closehover.png?__sprite");
+    }
+  }
+  .callstatus{
+    width:100%;
+    height:63px;
+    // background:$bg-search;
+    padding-top: 17px;
+    .step1,.step2{
+      display:inline-block;
+      height:42px;
+      line-height:42px;
+      em{
+        width:42px;
+        height:42px;
+        vertical-align: middle;
+      }
+    }
+    .step1{
+      margin-left:30px;
+      em{
+        background:url("/src/images/step1.png?__sprite");
+      }
+    }
+    .step2{
+      margin-right:30px;
+      em{
+        background:url("/src/images/step2.png?__sprite");
+        &.unstep{
+          background:url("/src/images/step2_b.png?__sprite");
+        }
+      }
+    }
+    .progress{
+      display:inline-block;
+      width:73px;
+      height:14px;
+      background:url("/src/images/progress.png?__sprite");
+      margin:15px 0 0 30px;
+    }
+  }
+  .noticecheck{
+    position: relative;
+    width:100%;
+    height:63px;
+    // background:$bg-search;
+    padding-top: 17px;
+    .noticeicon{
+      position: absolute;
+      top: 21px;
+      left:48px;
+      width:28px;
+      height:38px;
+      background:url('/src/images/checkicon.png?__sprite');
+    }
+    .checkwrap{
+      width:380px;
+      margin-left:110px;
+      .checkitem{
+        width:125px;
+        margin-bottom:12px;
+        font-size: 14px;
+        .uncheck{
+          cursor: pointer;
+          em{
+            width:16px;
+            height:16px;
+            background:url('/src/images/unchecked.png?__sprite');
+            margin-right:5px;
+            vertical-align:sub;
+          }
+        }
+        .checked{
+          em{
+            background:url('/src/images/check_red.png?__sprite');
+          }
+        }
+      }
+    }
+  }
+  .dialogcontent{
+    margin-top:15px;
+    // overflow:hidden;
+    .inputitems{
+      padding-top:15px;
+      font-size: 0;
+      width:336px;
+      margin:0 auto;
+      .inputitem{
+        .notnull{
+          color:$color-f;
+          display:inline-block;
+          width:7px;
+        }
+        display:inline-block;
+        width:100px;
+        height:40px;
+        line-height: 40px;
+        font-size: 16px;
+        .colon{
+          margin-right: 5px;
+        }
+        .inputname{
+          display:inline-block;
+          width:74px;
+          letter-spacing: 10px;
+          white-space:nowrap;
+          &.two{
+            letter-spacing:36px;
+          }
+          &.four{
+            letter-spacing:1px;
+          }
+        }
+      }
+      .inputbox{
+        position: relative;
+        width:226px;
+        display:inline-block;
+        /*.placeholder{
+          position: absolute;
+          left:0;
+          top:0;
+          width:226px;
+          height:42px;
+          line-height:42px;
+          text-indent:10px;
+          color:@font-light;
+          .font(14);
+        }*/
+      }
+      input{
+        height:30px;
+        width:204px;
+        padding:5px 10px;
+        line-height: 30px;
+        font-size: 14px;
+        border:1px solid $color-holder;
+        &.inputcode{
+          width:95px;
+        }
+        &:focus{
+          border:1px solid $color-f;
+        }
+      }
+      .getcode{
+        display:inline-block;
+        *display:inline;
+        *zoom:1;
+        width:84px;
+        height:26px;
+        line-height:26px;
+        margin:0;
+        cursor:pointer;
+        border:0;
+        font-size: 12px;
+        border-radius: 4px;
+        &.disabled{
+          // background: $btn-disabled;
+          color: $font-color;
+          cursor:default;
+          em{
+            color:$color-f;
+          }
+        }
+      }
+    }
+    .remark{
+      width:314px;
+      height:20px;
+      line-height:20px;
+      font-size: 12px;
+      color:$font-lighter;
+      margin:10px auto 0;
+    }
+  }
+  .freecall{
+    margin-top:0;
+  }
+  .joinin{
+    width:323px;
+    height:40px;
+    line-height: 40px;
+    margin:20px 0 0px 110px;
+    border-radius: 4px;
+		background:$btn-default;
+		text-align: center;
+		color:$color-white;
+		cursor:pointer;
+		// .transition(.3s,ease);
+    &:hover{
+    	background:$btn-default-hover;
+    }
+  }
+  .loginbox{
+    width:430px;
+    height:20px;
+    line-height:20px;
+    margin-top:10px;
+    font-size: 14px;
+    color:$font-light;
+    text-align:right;
+    padding-right: 99px;
+    .login,.regist{
+      color:$color-f;
+      font-size: 14px;
+    }
+    .login{
+      padding:0 0 0 5px;
+    }
+    .line{
+      margin:5px;
+    }
+  }
+  .telphone{
+    height:20px;
+    line-height:20px;
+    margin:30px 0 30px 0;
+    text-align:center;
+    font-size: 16px;
+    .telnum{
+      font-size: 20px;
+      color:#ff871f;
+      margin:0 5px;
+      vertical-align: bottom;
+    }
+  }
+  .lodingpic{
+    height:24px;
+    line-height:24px;
+    margin-bottom:25px;
+    text-align:center;
+    font-size: 16px;
+    img{
+      width:24px;
+      height:24px;
+      vertical-align: bottom;
+    }
+  }
+  .dialogtip{
+    height:20px;
+    line-height:20px;
+    text-align:center;
+    font-size: 12px;
+    color:$font-lighter;
+  }
+  .successpic{
+    margin-top:54px;
+    text-align:center;
+    em{
+      width:64px;
+      height:64px;
+      background:url("/src/images/success.png?__sprite");
+    }
+  }
+  .successpicsmall{
+    margin-top:48px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    font-size: 22px;
+    color:$color-f;
+    em{
+      width:40px;
+      height:40px;
+      background:url("/src/images/successsmall.png?__sprite");
+      vertical-align:top;
+      margin-right:10px;
+    }
+  }
+  .joinsuccesstip{
+    margin-top:10px;
+    text-align:center;
+    font-size: 20px;
+    font-weight:bold;
+    color:$color-default;
+    span{
+      font-size:12px;
+      color:$font-color;
+      font-weight:100;
+    }
+  }
+  .joinsuccessinfo{
+    margin-top:8px;
+    text-align:center;
+    font-size: 12px;
+    color:$font-color;
+    a{
+      color:$color-default;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .btn{
+    display: inline-table;
+    padding: 8px 10px;
+    font-size: 12px;
+    margin:0 5px;
+    border:1px solid transparent;
+    text-align: center;
+    line-height: 15px;
+    cursor: pointer;
+    // .transition(background-color,.2s);
+    &.btn-sm{
+      padding:5px 10px;
+      font-size: 12px;
+    }
+    &.btn-xs{
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    &.btn-lg{
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    &.btn-default{
+      border-color: $btn-default;
+      background-color: $btn-default;
+      color: $color-white;
+      &:hover{
+        border-color: $btn-default-hover;
+        background-color: $btn-default-hover;
+        color: $color-white;
+      }
+    }
+    &.btn-default-o{
+      border-color: $btn-default;
+      background-color: $color-white;
+      color: $color-default;
+      &:hover{
+        border-color: $btn-default-hover;
+        background-color: $color-white;
+        color: $color-default;
+      }
+    }
+    &.btn-no{
+      border-color: transparent;
+      background-color: transparent;
+      color: $color-default;
+      &:hover{
+        border-color: transparent;
+        background-color: transparent;
+        color: $color-default;
+      }
+    }
+    &.btn-main{
+      border-color: $btn-main;
+      background-color: $btn-main;
+      color: $color-white;
+      &:hover{
+        border-color: $btn-main-hover;
+        background-color: $btn-main-hover;
+        color: $color-white;
+      }
+    }
+    &.btn-disable{
+      border-color: $btn-gray;
+      background-color: $btn-gray;
+      color: $color-white;
+      &:hover{
+        background-color: $btn-gray-hover;
+        color: $color-white;
+      }
+    }
+  }
+}
+.dialogmask{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  background:$color-black;
+  z-index:999;
+}
+// #joinviewhouse{
+//   display:none;
+// }
+// #changeprice{
+//   display:none;
+// }
+#yihe,#shanding,#miaoshasuccess,#consultonline{
+  display:none;
+}
+#freecall{
+  display:none;
+}
+#freeApplly{
+  display:none;
+}
+#freecallsuccess{
+  display:none;
+  .dialogbox{
+    min-height:310px;
+  }
+}
+#joinsuccess{
+  display:none;
+  .dialogbox{
+    min-height:260px;
+  }
+}
+#titlesave{
+  display:none;
+  .dialogbox{
+    width:386px;
+    min-height:220px;
+    height: 220px;
+    margin: -110px 0 0 -193px;
+  }
+  .inputitems{
+    width:226px;
+  }
+  .joinin{
+    width:226px;
+    margin:20px 0 0px 80px;
+  }
+}
+#subscribe{
+  display:none;
+}
+.inputimgcode{
+  width: 59px!important;
+}
+.img-check{
+  height: 42px;
+  width: 140px;
+}
+#subscribesuccess,#attentsuccess{
+  display:none;
+  .dialogbox{
+    width:350px;
+    min-height:142px;
+    height: 142px;
+    margin: -86px 0 0 -175px;
+  }
+}
+.dialogopen{
+  display:block;
+}
+.show-log{
+  position: absolute;
+  left: 50%;
+  top: -36px;
+  .alertcontent{
+    position: relative;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 20px 1px rgba(0,0,0,0.2);
+    padding:6px 13px 6px 16px;
+    height: 19px;
+    line-height: 19px;
+  }
+  .main-txt{
+    color: #333;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .icon{
+    width: 15px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: url('img/yhticon.png?__sprite') no-repeat;
+  }
+  .closeicon{
+    width: 11px;
+    height: 10px;
+    display: inline-block;
+    background: url('img/showlog-icon.png?__sprite') no-repeat;
+    margin-left: 8px;
+    cursor: pointer;
+
+    &:hover{
+      // .rotate(180deg);
+    }
+  }
+  .layer-arrow{
+    position: absolute;
+    top: 31px;
+    left: 50%;
+    margin-left: -7px;
+    overflow: hidden;
+  }
+  .s-line3,.s-bg2br{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top;
+    border-right: 7px dashed transparent;
+    border-bottom: 7px dashed transparent;
+    border-left: 7px dashed transparent;
+  }
+  .s-line3{
+    border-top: 7px solid #ccc;
+  }
+  .s-bg2br{
+    border-top: 7px solid #fff;
+    margin:-1px 0 0 -14px;
+    *margin:-1px 0 0 -14px;
+  }
+}
+//计算器
+.calculator-box{
+  position: absolute;
+  width: 434px;
+  border:1px solid $color-gray;
+  background: $color-white;
+  z-index: 9999;
+  padding: 15px;
+  dl{
+    margin:0;
+  }
+  dt{
+    width: 180px;
+    float: left;
+    label,input{
+      width: 188px;
+      margin-bottom: 10px;
+    }
+    .btn{
+      margin:0;
+    }
+  }
+  dd{
+    margin: 0;
+    padding-left: 220px;
+    h5{
+      margin:0 0;
+    }
+    .errMsg{
+      color: $color-main;
+      line-height: 30px;
+      height: 30px;
+    }
+    h4{
+      margin: 0;
+      color: $color-white;
+      line-height: 33px;
+      padding: 9px 8px 0;
+      font-weight: 100;
+      b{
+        margin:0 5px;
+        font-size: 24px;
+      }
+    }
+    p{
+      line-height: 20px;
+    }
+  }
+  .calculater-chart{
+    margin-bottom: 10px;
+    height: 144px;
+    width:200px;
+    background: url('/src/images/calculator-bg.png') 0 0 repeat-x;
+    .chart-box{
+      width: 200px;
+      height: 95px;
+      overflow: hidden;
+    }
+  }
+}
+/*价格说明消息框*/
+.ht-dailog{
+  color:#333;
+  display:none;
+  position:absolute;
+  left: 0;
+  font-size:14px;
+  padding:4px 8px;
+  line-height:22px;
+  border:1px solid #ddd;
+  border-radius:4px;
+  z-index:1;
+  background:#fff;
+
+  &::before,&::after{
+    content:"";
+    display:block;
+    border-width:10px;
+    position:absolute; 
+    top:-21px;
+    left:20px;
+    border-style:solid dashed dashed;
+    border-color: transparent transparent #ddd;
+    font-size:0;
+    line-height:0;
+  }
+  &::after{
+    top:-19px;
+    border-color: transparent transparent #fff;
+  }
+
+  .ht-dailog-tr{
+    // max-width:350px;
+    // @include ellipsis();
+  }
+  .ht-dailog-td{
+    // display:inline-block;
+    // &:first-child{
+    //   width:70px;
+    // }
+  }
+}
+// //置业顾问在线咨询
+// #consultonline{
+//   .dialogbox{
+//     width:400px;
+//     margin-left:-200px;
+//   }
+// }
+// .consultonline-box{
+//   padding:0 20px;
+//   max-height:449px;
+//   overflow-y: auto;
+//   .consult-item{
+//     padding:5px 0;
+//     border-top:1px dashed $e7-border;
+//     &:first-child{
+//       border-top:0;
+//     }
+//   }
+//   .consult-right{
+//     padding-left:20px;
+//   }
+//   .consult-photo{
+//     width:60px;
+//     height:60px;
+//     border-radius: 50%;
+//   }
+//   .consult-name{
+//     line-height:22px;
+//     .name{
+//       font-size:14px;
+//       font-weight:bold;
+//     }
+//     .askinline{
+//       cursor:pointer;
+//       font-size:12px;
+//       width: 70px;
+//       height: 20px;
+//       margin-left:10px;
+//       line-height: 20px;
+//       color: #fff;
+//       background: #fcb427;
+//       text-align: center;
+//       transition: background .3s ease;
+//       display:inline-block;
+//       &:hover{
+//         background: #ed9e03;
+//       }
+//     }
+//   }
+//   .consult-tel{
+//     font-size:14px;
+//     line-height:20px;
+//     color:$font-light;
+//     span{
+//       margin:0 2px;
+//     }
+//   }
+// }
+// //webim层级
+// #webim{
+//   z-index:99!important;
+// }

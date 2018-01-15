@@ -1,0 +1,89 @@
+/*
+    reset.less 重置部分
+ */
+// @import url('components/variables.less');
+
+body, ul,li, ol, dl, dd, h1, h2, h3, h4, h5, h6, p, form, fieldset, legend, input, textarea, select, button, th, td {
+  margin:0;
+  padding:0;
+}
+body {
+  color:#333;
+  font-size: 12px;
+  font-family: '微软雅黑','Arial', 'Helvetica','microsoft yahei', 'sans-serif';
+}
+p{
+  line-height: 25px;
+  margin: 0;
+}
+div{
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+}
+ul,ol{
+  list-style: none;
+}
+img {
+  border: none;
+}
+h1,h2,h3,h4,h5,h6{
+  // margin: 10px 0;
+  font-weight: 100;
+}
+
+em{
+  font-style: normal;
+  display: inline-block;
+}
+a{
+
+  text-decoration: none;
+  transition: color .3s;
+  &:hover{
+    text-decoration: none;
+  }
+}
+//处理 placeholder
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color:#999999;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#999999;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#999999;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#999999;
+}
+input:focus{
+  outline:none;
+}
+.f-l {
+  float: left !important;
+}
+.f-r {
+  float: right !important;
+}
+.f-n {
+  float: none !important;
+}
+.cf{
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  *html &{
+    zoom: 1;
+  }
+  *+html &{
+    zoom: 1;
+  }
+}
+
+

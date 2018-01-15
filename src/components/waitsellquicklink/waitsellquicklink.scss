@@ -1,0 +1,62 @@
+@import '../../scss/variables.scss';
+
+.quick-wrapper {
+  width:1200px;
+  margin: 10px auto 20px;
+  color: #333;
+  a{
+    color: #333;
+  }
+}
+.quick-wrapper .tit {
+  font-weight: normal;
+  font-size: 20px;
+  margin:0;
+  border-bottom: 4px solid #666;
+  line-height: 35px;
+}
+.quick-link {
+  margin-top: 3px;
+  padding: 10px 15px;
+  border-top: 1px solid #999;
+}
+.qlink-box {
+  line-height: 30px;
+}
+.qlink-name {
+  float: left;
+  width: 90px;
+  text-align: left;
+  font-weight: bold;
+  cursor:pointer;
+  &:hover{
+    color:$color-main;
+  }
+}
+.qlink-list {
+  float: left;
+  width: 1055px;
+  margin: 0;
+  padding: 0px 10px;
+  overflow: hidden;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: normal;
+}
+.qlink-list a {
+  display: inline-block;
+  margin-right: 15px;
+  white-space: nowrap;
+  color: #333;
+}
+.qlink-list a:hover {
+  color: #007dd4;
+}
+
+.seo-link{
+  padding:10px 0;
+  .qlink-list{
+    padding:0;
+    width:100%;
+  }
+}

@@ -1,0 +1,43 @@
+.webuploader-container {
+	position: relative;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	overflow: hidden;
+	width: 120px;
+	height:86px;
+}
+.webuploader-pick-hover {
+	background: none;
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+
+.file-item .progress{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+}
+.file-item .progress .progress-bar{
+	width:100%;
+	height:100%;
+	background:#e5e5e5;
+	filter:alpha(opacity=80);       /* IE */
+  -moz-opacity:0.8;              /* 老版Mozilla */
+  -khtml-opacity:0.8;              /* 老版Safari */
+  opacity: 0.8;
+}
+
+

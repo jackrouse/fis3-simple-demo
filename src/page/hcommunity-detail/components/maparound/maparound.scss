@@ -1,0 +1,138 @@
+.scrollFixed{
+  width: 100%;
+  position: fixed;
+}
+.arround {
+  &__wrapper {
+    padding-bottom: 46px;
+    &--fixed{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      margin-top: 0;
+    }
+  }
+  &__list {
+    &-nav {
+      margin-bottom: 0;
+      line-height: 48px;
+    }
+  }
+  &__scroll{
+    width: 445px;
+    height: 401px;
+    overflow: hidden;
+    position: relative;
+  }
+  &__content {
+    background: #fff;
+    height: 435px;
+    &-map {
+      width: 754px;
+      height: 435px;
+    }
+    &-r {
+      width: 445px;
+      height: 435px;
+    }
+  }
+  &__nav {
+    height: 32px;
+    line-height: 32px;
+    background: #f6f7fd;
+    border-top: 1px solid #8c929d;
+    border-bottom: 1px solid #8c929d;
+    &-item {
+      width: 54px;
+      float: left;
+      font-size: 12px;
+      text-align: center;
+      color: #333;
+      cursor: pointer;
+      border-right: 1px solid #8c929d;
+      &:first-child {
+        border-left: 1px solid #8c929d;
+      }
+      &--last {
+        width: 58px;
+      }
+      &--active {
+        background: #8c929d;
+        color: #fff;
+      }
+    }
+    &-icon {
+      font-size: 18px;
+      color: #999;
+      float: left;
+      margin-right: 42px;
+      cursor: pointer;
+      i{
+        width:18px;
+        height:16px;
+        display: inline-block;
+        margin-right: 7px;
+        vertical-align: -3px;
+      }
+      &--screen {
+        background: url('./img/icon_all.png?__sprite') no-repeat 0 center;
+      }
+      &--map {
+        background: url('./img/icon_map.png?__sprite') no-repeat 0 center;
+      }
+      &--distance {
+        background: url('./img/icon_rule.png?__sprite') no-repeat 0 center;
+      }
+      &--bus {
+        background: url('./img/icon_bus.png?__sprite') no-repeat 0 center;
+      }
+      &--car {
+        background: url('./img/icon_taxi.png?__sprite') no-repeat 0 center;
+      }
+    }
+  }
+
+  &__detail {
+    &-tit {
+      font-size: 12px;
+      color: #333;
+      line-height: 1;
+      padding: 10px 0 10px 10px;
+      
+    }
+    &-wrap {
+      width: 445px;
+      // padding: 0 0 0 10px;
+      position: absolute;
+      top: 0;
+    }
+    &-item {
+      font-size: 0;
+      line-height: 1;
+      margin-top: 20px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    &-name {
+      width: 168px;
+      font-size: 14px;
+      color: #333;
+    }
+    &-price {
+      width: 160px;
+      font-size: 14px;
+      color: #333;
+      &--red {
+        color: #ee206b;
+      }
+    }
+    &-area {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+}

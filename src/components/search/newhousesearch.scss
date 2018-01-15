@@ -1,0 +1,163 @@
+@import '../../scss/variables.scss';
+//头部下面搜索区域公共部分
+.container-search{
+  height: 60px;
+}
+.breadsearch{
+  width:1200px;
+  height:60px;
+  margin:0 auto;
+  .searchlistbox{
+    margin-top: 12px;
+  }
+  .keywordsbox{
+    margin:12px 0 0 34px;
+    height:36px;
+    width:507px;
+    overflow: hidden;
+  }
+  .search-nav-lsit{
+    line-height:36px;  
+    li{
+      float:left;
+      margin-right:12px;
+      font-size:12px;
+    }
+  }
+}
+.searchlistbox{
+  margin-top: 17px;
+  height:36px;
+  position: relative;
+  z-index: 2;
+  .hbtn-search{
+    width:60px;
+    background: #007dd4;
+    display: block;
+    height: 36px;
+    color: #fff;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 14px;
+    cursor:pointer;
+    -webkit-transition:background 0.5s;
+    -moz-transition:background 0.5s;
+    -ms-transition:background 0.5s;
+    -o-transition:background 0.5s;
+    transition:background 0.5s;
+    &:hover{
+      background:#005088;
+    }
+  }
+  .nav-searchipt{
+    padding: 0 10px;
+    width: 425px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    border: 1px solid #dddddd;
+    border-right: 0 none;
+    border-radius: 4px 0 0 4px;
+    font-family: '微软雅黑', 'Arial', 'Helvetica', 'microsoft yahei', 'sans-serif';
+    &:focus{
+      border-color:#007dd4;
+    }
+  }
+}
+.hothouse-list{
+  position: absolute;
+  top:36px;
+  left:0px;
+  width:444px;
+  overflow-y: auto;
+  font-size: 14px;
+  background:#fff;
+  border:1px solid #e6e6e6;
+  border-top: 0 none;
+  z-index: 1;
+  display: none;
+  .search-title{
+    height:36px;
+    line-height: 36px;
+    color:#007dd4;
+    padding:0 10px;
+    display: inline-block;
+    cursor:default;
+  }
+  .houseinfo{
+    max-width:300px;
+    // .ellipsis();
+  }
+}
+.select-position-wrap{
+  position: absolute;
+  font-size: 14px;
+  z-index: 1;
+  background: #fff;
+  .select-wrap {
+    border: 1px solid #ddd;
+    a{
+      color:$font-color;
+    }
+    li{
+      padding: 0 10px;
+      list-style: none;
+      cursor: pointer;
+      white-space: nowrap;
+      text-align: left;
+      &:hover{
+        background:#eee;
+      }
+    }
+  }
+}
+.searchlist-ul{
+  font-size: 14px;
+  li{
+    height: 33px;
+    line-height: 33px;
+    padding:0 10px;
+    color: #999;
+    cursor: pointer;
+    &:hover{
+      background:#eee;
+    }
+  }
+  .housename{
+    color: #333;
+  }
+}
+.nav-mapicon{
+  margin-left:20px;
+  width:100px;
+  .searchmap{
+    margin-top:13px;
+    width: 98px;
+    height: 32px;
+    border: 1px solid $btn-border;
+    cursor: pointer;
+    .search-mapico{
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background-color: $btn-border;
+      background-image: url("img/map.png?__sprite");
+      background-position: -1px -1px;
+    }
+  }
+}
+.search-maptext{
+  width: 66px;
+  text-align: center;
+  display: inline-block;
+  line-height: 32px;
+  color:$color-main;
+  font-size: 14px;
+  transition:background 0.5s;
+  &:hover{
+    background:$btn-border;
+    color:$color-white;
+  }
+}
