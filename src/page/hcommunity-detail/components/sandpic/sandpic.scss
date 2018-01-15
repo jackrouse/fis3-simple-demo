@@ -1,0 +1,286 @@
+$color-primary: #367dff;
+$color-yellow: #ffcc61;
+$color-red: #ee206b;
+$color-coffee: #baa694;
+$color-green: #19b78b;
+$color-purple: #263b79;
+$color-grey: #8c929d;
+.sand {
+  &__l {
+    width: 755px;
+  }
+  &__r {
+    width: 445px;
+    background: #fff;
+  }
+  &__nav {
+    margin-bottom: 0;
+  }
+  &__floor {
+    &-wrapper {
+      height: 48px;
+      line-height: 48px;
+      position: relative;
+      border-top: 1px solid #8c929d;
+      border-bottom: 1px solid #8c929d;
+      overflow: hidden;
+    }
+    &-item {
+      float: left;
+      width: 57px;
+      height: 48px;
+      text-align: center;
+      font-size: 16px;
+      color: #191919;
+      // border-left: 1px solid #8C929D;
+      border-right: 1px solid #8c929d;
+      cursor: pointer;
+      &--active {
+        background: #8c929d;
+        color: #fff;
+      }
+      &--wrap {
+        height: 48px;
+        margin-left: 22px;
+        position: absolute;
+        left: 0;
+      }
+    }
+    &-arrow {
+      width: 22px;
+      height: 48px;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      cursor: pointer;
+      &--left {
+        @extend .sand__floor-arrow;
+        left: 0;
+        background: #8c929d;
+        text-align: center;
+        .sand__floor-arrow--icon{
+          background:url('../house-base-info/img/icon_img-arrowleft.png?__sprite');
+          }
+        }
+      &--right {
+        @extend .sand__floor-arrow;
+        right: 0;
+        background: #8c929d;
+        text-align: center;
+        .sand__floor-arrow--icon{
+          background: url('../house-base-info/img/icon_img-arrowright.png?__sprite');
+        }
+      }
+      &--icon{
+        display: inline-block;
+        width:6px;
+        height:10px;
+      }
+    }
+  }
+}
+.sandMap {
+  &__wrapper {
+    height: 435px;
+    position: relative;
+    overflow: hidden;
+  }
+  &__map {
+   cursor: pointer;
+  }
+  &__mask{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    cursor: n-resize;
+    background: #fff;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    z-index: 100;
+  }
+  &__scroll{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+  }
+  &__label {
+    &-wrap {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      z-index: 110;
+    }
+    &-item {
+      width: 62px;
+      height: 28px;
+      border-radius: 2px;
+      line-height: 28px;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    &-name {
+      position: absolute;
+      width: 92px;
+      height: 28px;
+      border-radius: 2px;
+      font-size: 14px;
+      color: #fff;
+      line-height: 28px;
+      text-align: center;
+      z-index: 20;
+      top: 0;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 12px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #ddd;
+        // border: 10px solid transparent;
+        // border-top-color: #ddd;
+        // border-left-width: 0;
+      }
+    }
+  }
+}
+.sandHouse {
+  &__info {
+    font-size: 14px;
+    color: #333;
+    margin: 15px 0 0 10px;
+    &-isopen {
+      width: 40px;
+      height: 16px;
+      display: inline-block;
+      line-height: 16px;
+      color: #367dff;
+      border-radius: 9px;
+      background: #fff;
+      border: 1px solid #367dff;
+      text-align: center;
+      margin-left: 10px;
+      vertical-align: bottom;
+    }
+    &-item {
+      margin-left: 35px;
+      li {
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &__label {
+    &-wrap {
+      width: 415px;
+      height: 28px;
+      line-height: 28px;
+      background: #ebedf4;
+      padding: 0 10px;
+      font-size: 0;
+      overflow: hidden;
+      margin-left: 10px;
+      span {
+        font-size: 12px;
+        color: #666;
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  &__type {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #666;
+    position: relative;
+    padding-left: 10px;
+    margin: 15px 0 15px 10px;
+    &-line {
+      position: absolute;
+      width: 4px;
+      height: 20px;
+      left: 0;
+      top: 0;
+      background: #367dff;
+      border-radius: 2px;
+    }
+  }
+  &__scroll {
+    width: 445px;
+    height: 206px;
+    overflow: hidden;
+    position: relative;
+  }
+  &__build {
+    &-num {
+      width: 425px;
+      height: 34px;
+      line-height: 34px;
+      background: #ebedf4;
+      padding-left: 10px;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+    &-wrap {
+      padding: 10px 0 0 13px;
+      position: absolute;
+      width: 432px;
+      top: 0;
+      height: 196px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      li {
+        line-height: 1;
+        margin-bottom: 21px;
+      }
+    }
+    &-item {
+      width: 33.33%;
+      float: left;
+      text-align: left;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+}
+
+$colors: (
+     ('primary', #367dff),
+     ('yellow', #ffcc61),
+     ('red', #ee206b),
+     ('coffee', #baa694),
+     ('green', #19b78b),
+     ('purple', #263b79),
+     ('grey', #8c929d)
+  )!default;
+@each $type, $color in $colors {
+  .sandMap__label-item--#{$type} {
+    color: #fff;
+    background: $color;
+    &::before{
+      border-top-color: $color;
+    }
+  }
+}
+
+ .HouseMarked-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 97;
+}

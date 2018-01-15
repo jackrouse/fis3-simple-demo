@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#f6f7fc;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/src/scss/common.scss">
+  <link rel="stylesheet" href="/src/scss/font.scss">
+  <!-- <link rel="stylesheet" href="/src/scss/btn.scss"> -->
+  <link rel="stylesheet" href="hcommunity-detail.scss">
+  <!-- <link rel="stylesheet" href="/src/libs/mescroll/mescroll.min.css"> -->
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tRcad54fc5HjGw1mZ64lttoT"></script>
+
+  <script type="text/javascript" src="http://api.map.baidu.com/library/DistanceTool/1.2/src/DistanceTool_min.js"></script>
+
+  <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+  <style>
+    .layout {
+      position: fixed;
+      z-index: 39;
+      /* margin-top: -2px // */
+    }
+  </style>
+
+  <!-- <script data-loader src="js/lib/jquery.lazyload.min.js"></script>
+  <script data-loader src="js/lib/jquery.SuperSlide.2.1.1.js"></script> -->
+  <!-- <script data-loader src="/libs/easyscroll/easyscroll.js"></script>
+  <script data-loader src="/libs/easyscroll/mousewheel.js"></script> -->
+</head>
+
+<body>
+  <input type="hidden" value="114.31" id="resX">
+  <input type="hidden" value="30.581" id="resY">
+  <input type="hidden" value="碧桂园" id="resName">
+  <input type="hidden" value="gxwhc" id="pinyin">
+  <input type="hidden" value="30abacadf14f4457b1e34d66062b2b03" id="basetype">
+  <input type="hidden" value="7C69A332-7C95-4CEF-BC47-26DE81524C6C" id="houseId">
+  <input type="hidden" value="57e8986661b5bf5268eacf53" id="stageId">
+  <input type="hidden" value="8B80043A-F9AD-4811-BC73-DB089ECDFF80" id="bid">
+  <input type="hidden" id="houseIndexUrl" value="wh.fdc.com.cn">
+  <!-- <input type="hidden" value="8B80043A-F9AD-4811-BC73-DB089ECDFF80" id="houseIndexUrl"> -->
+  <div>
+    <!-- 头部 -->
+    <link rel="import" href="/src/components/head/head.tpl?__inline">
+    <!-- 头部 -->
+
+    <!-- 菜单 -->
+    <link rel="import" href="/src/components/menu/menu.tpl?__inline">
+    <!-- 菜单 END -->
+
+    <!-- 面包屑&搜索 -->
+    <link rel="import" href="/src/components/search/search.tpl?__inline">
+    <!-- 面包屑&搜索 END-->
+
+    <!-- 悬浮导航 -->
+    <link rel="import" href="./components/header/header.tpl?__inline">
+    <!-- 悬浮导航 -->
+
+    <!-- 楼盘基本信息 -->
+    <link rel="import" href="./components/house-base-info/housebaseinfo.tpl?__inline">
+    <!-- 楼盘基本信息 -->
+
+
+    <!-- 沙盘图 -->
+    <link rel="import" href="./components/sandpic/sandpic.tpl?__inline">
+    <!-- 沙盘图 -->
+
+    <!-- 户型图列表 -->
+    <link rel="import" href="./components/housetypelist/housetypelist.tpl?__inline">
+    <!-- 户型图列表 -->
+
+
+
+    <!-- 二手房列表 start -->
+    <link rel="import" href="./components/oldhouselist/oldhouselist.tpl?__inline">
+    <!-- 二手房列表 end -->
+
+    <!-- 租房列表 start -->
+    <link rel="import" href="./components/oldhouselist/renthouselist.tpl?__inline">
+    <!-- 租房列表 end -->
+
+    <!-- 装修 -->
+    <link rel="import" href="./components/dec/deccase.tpl?__inline">
+    <!-- 装修 -->
+
+    <!-- 楼盘简介 start -->
+    <link rel="import" href="./components/houseintroduction/houseintroduction.tpl?__inline">
+    <!-- 楼盘简介 end -->
+
+    <!-- 周边地图配套 start -->
+    <link rel="import" href="./components/maparound/maparound.tpl?__inline">
+    <!-- 周边地图配套 end -->
+
+    <!-- 小区点评 start -->
+    <link rel="import" href="./components/residential-review/resreview.tpl?__inline">
+    <!-- 小区点评 end -->
+
+    <!-- 小区问答 start -->
+    <link rel="import" href="./components/residential-ask/resask.tpl?__inline">
+    <!-- 小区问答 end -->
+
+    <!-- 附近楼盘 看过楼盘 start-->
+    <link rel="import" href="./components/relatehouse/relatehouse.tpl?__inline">
+    <!-- 附近楼盘 看过楼盘 -->
+
+    <!-- 底部链接 您还可以浏览-->
+    <link rel="import" href="/src/components/seolink/seolink.tpl?__inline">
+    <!-- 底部链接 您还可以浏览END-->
+
+    <!-- 排行榜-->
+    <link rel="import" href="/src/components/rank/rank.tpl?__inline">
+    <!-- 排行榜 END-->
+
+    <!-- 快速入口-->
+    <link rel="import" href="/src/components/waitsellquicklink/waitsellquicklink.tpl?__inline">
+    <!-- 快速入口 END-->
+
+    <!-- 底部 start-->
+    <link rel="import" href="./components/footer/footer.tpl?__inline">
+    <!-- 底部 end -->
+
+    <!-- 预约报名弹窗 start-->
+    <link rel="import" href="/src/components/dialog/shanding.tpl?__inline">
+    <!-- 预约报名弹窗 end -->
+
+    <!-- 变价提醒弹窗 start-->
+    <link rel="import" href="/src/components/dialog/subscribe.tpl?__inline">
+    <!-- 变价提醒弹窗弹窗 end -->
+  </div>
+
+
+  <script type="text/javascript" src="/src/libs/jquery/jquery.min.js"></script>
+  <!-- <script src="https://static.fdc.com.cn/portal/js/libs/autoComplete/autoMenu.js"></script> -->
+  <script type="text/javascript" src="/src/libs/jqPlugin/jquery.actual.min.js"></script>
+  <script type="text/javascript" src="/src/libs/jqPlugin/jquery.easyBar.js"></script>
+  <script type="text/javascript" src="/src/libs/jqPlugin/jquery.anchormove.min.js"></script>
+  <script type="text/javascript" src="/src/libs/jqPlugin/jquery.navfloat.min.js"></script>
+  <script type="text/javascript" src="/src/libs/bmap/InfoBox_min.js"></script>
+  <script type="text/javascript" src="/src/libs/bmap/RichMarker_min.js"></script>
+  <script type="text/javascript" src="/src/libs/swiper/swiper-3.4.2.jquery.min.js"></script>
+  <script type="text/javascript" src="/src/libs/superSlide/jquery.SuperSlide.2.1.2.js"></script>
+  <!-- <script src="//static.fdc.com.cn/portal/js/libs/swiper/idangerous.swiper.js"></script> -->
+  <!-- <script src="https://static.fdc.com.cn/portal/js/libs/jqPlugin/jquery.SuperSlide.mod.js"></script> -->
+  <script type="text/javascript" src="/src/libs/knockout/knockout-3.4.0.js"></script>
+  <script type="text/javascript" src="/src/js/common.js"></script>
+  <script src="//static.fdc.com.cn/portal/js/libs/jqPlugin/jquery.placeholder.js"></script>
+  <!-- <script type="text/javascript" src="/src/libs/mescroll/mescroll.min.js"></script> -->
+  <script type="text/javascript" src="/src/js/BMap.js"></script>
+  <script type="text/javascript" src="//test.uc.fdc.com.cn/js/userLogin.js"></script>
+  <script src="//test.uc.fdc.com.cn/js/ucAttention.js"></script>
+  <script src="/src/js/userLogin_sns.js"></script>
+  <!-- <script type="text/javascript" src="/src/js/comments.js"></script> -->
+  <script type="text/javascript" src="./hcommunity-detail.js"></script>
+  <!-- <script type="text/javascript" src="./housedetail.js"></script> -->
+  
+</body>
+<script>
+  $(function () {
+      // $('#houseActive').easybar({
+      //   node: {
+      //     bar: '.scroll-wrap',
+      //     point: '.scroll-slider',
+      //     content: 'ul',
+      //     wrap: '.baseContent__r'
+      //   }
+      // });
+      // $('#sandHouse__scroll').easybar({
+      //   node: {
+      //     bar: '.scroll-wrap',
+      //     point: '.scroll-slider',
+      //     content: 'ul',
+      //     wrap: '.sandHouse__scroll'
+      //   }
+      // });
+
+      // $('.arround__scroll').easybar({
+      //   node: {
+      //     bar: '.scroll-wrap',
+      //     point: '.scroll-slider',
+      //     content: 'ul',
+      //     wrap: '.arround__scroll'
+      //   }
+      // });
+      $('#navFloat').anchormove({
+        clickOffset: 100,
+        floatOffset: 200,
+        activeNode: 'a',
+        activeClass: 'header__nav-item-active'
+      })
+      // $('#consultorFloat')
+      //   .navfloat({
+      //     type: 'aside',
+      //     fixTop: 100,
+      //     bottomPoint: '#houseTypeContent',
+      //     bottomEffect: 'offset'
+      //   })
+      $.each(
+        [
+          'houseTypeContent',
+          'oldHouseContent',
+          'rentHouseContent',
+          'decContent'
+        ],
+        function (index, item) {
+          $('#' + item + 'Aside').navfloat({
+            type: 'aside',
+            fixTop: 85,
+            bottomPoint: '#' + item,
+            bottomEffect: 'offset'
+          })
+        }
+      )
+     
+      $('.img-check').click(function () {
+        var $this = $(this)
+        tool.initImgCode($(this))
+      });
+    })
+ 
+
+     
+ 
+</script>
+
+</html>

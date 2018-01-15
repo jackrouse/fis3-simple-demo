@@ -1,0 +1,28 @@
+/*您还可以浏览 zc 2017.4.25*/
+@import '../../scss/variables.scss';
+
+.seo-link-wrapper{
+	.title{
+		border:1px solid $border-title-gray;
+	}
+	.seo-link-list{
+		width: 1174px;
+		height: auto;
+		border: 1px solid $border-title-gray;
+		border-top:0 none;
+		padding:10px 12px;
+	}
+	.seo-item{
+		// display: inline;
+		display: inline-block;
+		line-height: 32px;
+		a{
+			padding:0 12px;
+			font-size: 12px;
+      color: $font-seo;
+			&:hover{
+				color: $color-main;
+			}
+		}
+	}
+}

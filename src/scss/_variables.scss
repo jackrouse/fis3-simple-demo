@@ -1,0 +1,79 @@
+$color-main        : #008ef0;
+$color-main-light  : #4ca4e9;
+$color-main-lighter: #cce5f6;
+$color-hot         : #ff5741;
+$color-default     : #f02929;
+$color-holder      : #cccccc; /*提示文字颜色*/
+$color-gray        : #dddddd;
+$color-gray-dark   : #aaaaaa;
+$color-white       : #ffffff;
+$color-black       : #000000;
+$color-f           : #f24949;
+
+$font-color        : #333333; //文字颜色
+$font-light        : #666666; //文字颜色
+$font-lighter      : #999999; //文字颜色
+$common-font       : #555555; //文字颜色
+$font-white        : #ffffff;
+$font-seo          : #456371;
+$font-orange       : #d7a165;
+$font-main-lighter : #849bd6;
+
+$bg-gray           : #f2f2f2;
+$bg-gray-light     : #f5f5f5;
+$bg-gray-lighter   : #f8f8f8;
+$bg-gray-dark      : #576b79;
+$bg-gray-title     : #fafafa;
+$bg-gray-rank      : #f7f7f7;
+$bg-green-light    : #e2f0f1;
+$bg-green          : #57a5a5;
+$curbg-color       : #0164ca;
+$bg-hover          : #f5f5f5;
+$bg-pink           : #ffcdd5;
+$bg-orange         : #ffeabb;
+$bg-titlemutlist   : #f7f8fc;
+
+$e4-border  : #e4e4e4;
+$e7-border  : #e7e7e7;
+$ea-border  : #eaeaea;
+$d4-border  : #d4d4d4;
+$gry-dotted-border : #c4c4c4;
+$red-border : #f79494;
+
+$btn-border        : #99cbee;
+$btn-pink          : #f04533;
+$btn-orange        : #fd5841;
+$border-title-gray : #e6e6e6;
+$border-item-dash  : #e2e2e2;
+$border-pink       : #ffa4b3;
+$reply-hover       : #22b9ff;
+
+
+
+
+
+//按钮
+$btn-default : $color-default;
+$btn-default-hover : darken($color-default, 10%);
+
+$btn-main : $color-main;
+$btn-main-light : lighten($color-main, 40%);
+$btn-main-hover : darken($color-main, 10%);
+
+$btn-gray : $color-gray;
+$btn-gray-hover :$color-gray;
+
+$btn-cyan : #02d5bf;
+$cyan-hover: #b3f2ec;
+$reply-hover: #ff5741;
+
+$btn-return : #cce6f7;
+
+//弧度
+$radius-top         : 4px;
+$radius-right       : 4px;
+$radius-bottom      : 4px;
+$radius-left        : 4px;
+
+//阴影
+$boxshadow : rgba(0,0,0,.1);

@@ -1,0 +1,188 @@
+.dec {
+  &__list {
+    position: relative;
+    &-wrapper {
+      margin-top: 30px;
+      position: relative;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &-l {
+      width: 348px;
+      height: 322px;
+      display: block;
+      border: 6px solid #baa694;
+      position: relative;
+      text-align: center;
+      background: #f3ede9;
+      position: relative;
+    }
+    &-r{
+      height: 334px;
+      position: relative;
+    }
+    &-pic {
+      width: 349px;
+      height: 214px;
+      display: block;
+    }
+    &-headImg {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+      position: absolute;
+      top: 170px;
+      left: 146px;
+      box-shadow: rgba(0, 0, 0, 0.5) 0 3px 8px;
+    }
+    &-info {
+      font-size: 16px;
+      color: rgb(25, 25, 25);
+      margin-top: 54px;
+      line-height: 1;
+      font-weight: bold;
+    }
+    &-pos {
+      font-size: 14px;
+      color: rgb(25, 25, 25);
+      line-height: 1;
+      margin-top: 10px;
+      &-icon {
+        width: 23px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        background: url('./img/icon_kefuicon_address.png') no-repeat;
+      }
+    }
+    &-tit {
+      font-size: 20px;
+      color: rgb(51, 51, 51);
+      line-height: 1;
+      margin-bottom: 15px;
+      display: block;
+    }
+    &-des {
+      width: 546px;
+      height: 72px;
+      overflow: hidden;
+      word-break: break-all;
+      font-size: 16px;
+      color: rgb(51, 51, 51);
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+
+    &-line {
+      width: 557px;
+      height: 1px;
+      background: rgb(235, 237, 244);
+      margin: 20px 0;
+    }
+    &-share {
+      width: 60px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      background: rgb(54, 125, 255);
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    &-action {
+      font-size: 14px;
+      color: rgb(140, 146, 157);
+      div {
+        margin-left: 30px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      &-txt{
+        vertical-align: middle;
+      }
+      &-time {
+        @extend .dec__list-icon;
+        width: 15px;
+        height: 14px;
+        background: url('./img/icon_time.png') no-repeat;
+      }
+      &-view {
+        @extend .dec__list-icon;
+        width: 20px;
+        height: 14px;
+        background: url('./img/icon_viewicon_address.png') no-repeat;
+      }
+      &-talk {
+        @extend .dec__list-icon;
+        width: 14px;
+        height: 14px;
+        background: url('./img/icon_messageicon_address.png') no-repeat;
+      }
+    }
+    &-brand {
+      width: 78px;
+      height: 85px;
+      display: block;
+      position: absolute;
+      background: url('./img/icon_illicon_address.png') no-repeat;
+      right: 0;
+      bottom: 62px;
+      &-price {
+        font-size: 14px;
+        display: block;
+        color: #333;
+        text-align: center;
+        margin-top: 30px;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      &-style {
+        font-size: 12px;
+        color: #333;
+        display: block;
+        text-align: center;
+        line-height: 1;
+      }
+    }
+  }
+}
+.comment {
+  &__icon {
+    width: 18px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: top;
+    background: url('./img/icon_jianliicon_address.png') no-repeat;
+  }
+  &__tit {
+    font-size: 14px;
+    color: #333;
+    margin-right: 10px;
+    line-height: 24px;
+  }
+  &__item {
+    margin-top: 13px;
+
+    font-size: 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &-detail {
+      font-size: 14px;
+      line-height: 24px;
+      color: #333;
+    }
+  }
+  &__tag {
+    margin-top: 14px !important;
+  }
+}

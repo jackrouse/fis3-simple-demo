@@ -1,0 +1,221 @@
+// @import url('components/variables.less');
+
+@import url('reset.scss');
+@import url('star.scss');
+@import url('btn.scss');
+@import url('select.scss');
+@import url('_variables.scss');
+@import url('mixins.scss');
+@import url('font.scss');
+// @import './dialog.scss';
+@import '../components/head/head.scss';
+@import '../components/menu/menu.scss';
+@import '../components/search/search.scss';
+@import '../components/seolink/seolink.scss';
+@import '../components/rank/rank.scss';
+@import '../components/dialog/dialog.scss';
+// @import '../components/map/baidumap.scss';
+@import '../components/share/share.scss';
+@import '../components/dialog/logindialog.scss';
+@import '../components/waitsellquicklink/waitsellquicklink.scss';
+// // 星星
+// @import url('start.less');
+
+// @import url('tag.less');
+
+// @import url('logindialog.less');
+
+//@import url('/components/dialog/mymsginfo.less');
+.title {
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid $color-gray;
+  border-top: 2px solid $color-main;
+  background: $bg-gray-title;
+
+  &.title-full {
+    width: 1198px;
+    height: 48px;
+    line-height: 48px;
+  }
+  &.title-left {
+    width: 828px;
+    height: 48px;
+    line-height: 48px;
+  }
+  &.title-right {
+    width: 338px;
+  }
+  .name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px 10px 0px 12px;
+  }
+  .more {
+    font-size: 12px;
+    color: $font-lighter;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $color-main;
+    }
+  }
+  &.title-mutip {
+    border-top: 1px solid $color-gray;
+    background: $color-white;
+    .titlemutlist {
+      display: inline-block;
+      margin-top: -1px;
+      li {
+        width: 110px;
+        height: 47px;
+        line-height: 47px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        border-top: 2px solid transparent;
+        border-right: 1px solid $color-gray;
+        border-bottom: 1px solid $color-gray;
+        &.cur {
+          border-top: 2px solid $color-main;
+          border-bottom: 1px solid $color-white;
+          color: $color-main;
+        }
+      }
+    }
+  }
+}
+.container-full {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.container-main {
+  width: 1200px;
+  margin: 0 auto;
+}
+.bg-main {
+  background: #f6f7fd;
+}
+
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.space__top {
+  margin-top: 60px;
+  &--ls {
+    margin-top: 20px;
+  }
+}
+
+.content__aside {
+  width: 234px;
+}
+
+.house {
+  &__label {
+    margin: 20px 0 30px 0;
+    font-size: 0;
+    &-item {
+      font-size: 14px;
+      color: rgb(140, 146, 157);
+      height: 34px;
+      line-height: 36px;
+      background: #f6f7fd;
+      border: 1px solid #8c929d;
+      border-radius: 4px;
+      display: inline-block;
+      padding: 0 10px;
+      margin-left: 10px;
+      text-align: center;
+      &:first-child {
+        margin-left: 0;
+      }
+      &--small {
+        @extend .house__label-item;
+        height: 26px;
+        line-height: 26px;
+      }
+    }
+  }
+}
+.list {
+  &__nav {
+    width: 100%;
+    height: 48px;
+    background: rgb(235, 237, 244);
+    margin-bottom: 29px;
+    &-item {
+      width: 162px;
+      height: 48px;
+      display: inline-block;
+      float: left;
+      color: rgb(25, 25, 25);
+      line-height: 48px;
+      padding-left: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      &--active {
+        background: rgb(54, 125, 255);
+        color: #fff;
+      }
+    }
+    &-netHouse{
+      width: 150px;
+      padding-left: 32px;
+    }
+    &-w946 {
+      width: 946px;
+    }
+  }
+}
+
+.red {
+  color: #ff5741 !important;
+}
+
+.bbs-placeholder-img {
+  background-image: url('../images/icon_bbs_none.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+      src='/src/images/icon_bbs_none.jpg',
+      sizingMethod='scale'
+    );
+}
+.house-placeholder-img {
+  background-image: url('../images/icon_house_none.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='/src/images/icon_house_none.jpg',
+    sizingMethod='scale'
+  );
+}
+
+.pointicon {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: -60px 0px;
+  background-image: url('https://static.fdc.com.cn/portal/images/components/leftbaidumap_z.png')
+}
+
+

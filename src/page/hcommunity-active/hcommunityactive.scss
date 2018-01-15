@@ -1,0 +1,105 @@
+@import '../hcommunity-detail/components/footer/footer.scss';
+@import '../hcommunity-detail/components/houseintroduction/houseintroduction.scss';
+.activity_nav_all {
+  float: left;
+  width: 140px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 18px;
+  color: #8c929d;
+  border: 1px solid #ebedf4;
+  border-radius: 21px;
+  text-align: center;
+  cursor: pointer;
+  & + .activity_nav_all {
+    margin-left: 30px;
+  }
+  &.active {
+    color: #367dff;
+    border-color: #367dff;
+    background: #ffffff;
+  }
+}
+.activity_nav{
+  margin: 40px 0 30px 0;
+}
+.activity_page {
+  margin-top: 30px;
+  height: 30px;
+}
+
+%pageChangeBtn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  
+  // background-color: #ebedf4;
+}
+.activity_page_arrow_left {
+  @extend %pageChangeBtn;
+  background:#ebedf4 url('/src/images/icon_arrowleft.png?__sprite') no-repeat center center;
+  margin-right: 10px;
+  display: inline-block;
+}
+.activity_page_math {
+  width: 80px;
+  height: 30px;
+  color: #333333;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 18px;
+  border: 1px solid #8c929d;
+  outline: 0;
+}
+.activity_page_mathview {
+  margin: 0 10px 0 10px;
+  font-size: 18px;
+  line-height: 30px;
+  display: inline-block;
+}
+.activity_page_jump {
+  width: 68px;
+  line-height: 30px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  background: #367dff;
+  margin-left: 10px;
+  display: inline-block;
+}
+.activity_page_arrow_right {
+  @extend %pageChangeBtn;
+  margin-left: 10px;
+  background:#ebedf4 url('/src/images/icon_arrowright.png?__sprite') no-repeat center center;
+  
+}
+
+.activity {
+  &__wrapper {
+    height: 748px;
+    padding: 30px 50px 0 30px;
+    background: #fff;
+  }
+  &__des {
+    font-size: 14px;
+    color: #8C929D;
+    line-height: 24px;
+    word-break: break-all;
+    text-align: justify;
+    padding-left: 7px;
+    margin-top: 8px;
+  }
+  &__line{
+    height: 117px;
+    &--last{
+      height: 147px;
+    }
+  }
+  &__item{
+    margin-bottom: 25px;
+    &-head{
+      font-size: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
